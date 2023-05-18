@@ -5,6 +5,22 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from PIL import Image
 
+def main():
+    st.title('CIFAR-10 Image Classification')
+    uploaded_file = st.file_uploader('Upload an image', type=['jpg', 'jpeg', 'png'])
+
+    if uploaded_file is not None:
+        image = Image.open(uploaded_file)
+        prediction = predict(image)
+        st.write('Prediction:', prediction)
+        
+        # Additional information
+        st.write('TRISTAN PAUL RICOHERMOSO')
+        st.write('CPE32S6', prediction)
+        st.write('CIFAR0-10 DEPLOYMENT:', class_names[prediction])
+        
+
+
 
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
