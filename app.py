@@ -6,8 +6,8 @@ import numpy as np
 # Load the CIFAR-10 dataset
 cifar10 = tf.keras.datasets.cifar10
 (_, _), (x_test, _) = cifar10.load_data()
-class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
-               'dog', 'frog', 'horse', 'ship', 'truck']
+class_names = ['AIRPLANE', 'AUTOMOBILE', 'BIRD', 'CAT', 'DEER',
+               'DOG', 'FROG', 'HORSE', 'SHIP', 'TRUCK']
 
 @st.cache(allow_output_mutation=True)
 def load_model():
@@ -31,7 +31,7 @@ def import_and_predict(image_data, model):
 model = load_model()
 
 st.write("# CIFAR-10 Image Classification")
-file = st.file_uploader("Choose an image file (CIFAR-10 class)", type=["jpg", "png"])
+file = st.file_uploader("Select an image file (CIFAR-10)", type=["jpg", "png"])
 
 if file is None:
     st.text("Please upload an image file")
@@ -39,4 +39,4 @@ else:
     image = Image.open(file)
     st.image(image, use_column_width=True)
     class_label = import_and_predict(image, model)
-    st.success("Predicted class: " + class_label)
+    st.success("THAT IS A/AN: " + class_label)
