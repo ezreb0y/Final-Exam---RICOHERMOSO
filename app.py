@@ -11,7 +11,7 @@ class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model('cifar10_classifier.h5')
+    model = tf.keras.models.load_model('cifar10_model.h5')
     return model
 
 def preprocess_image(image):
