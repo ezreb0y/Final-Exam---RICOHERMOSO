@@ -39,4 +39,4 @@ else:
     image = Image.open(file)
     st.image(image, use_column_width=True)
     class_label = import_and_predict(image, model)
-    st.success("That is a/an: " + class_label)
+    st.success("Predicted Class: " + class_label)
