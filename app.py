@@ -30,8 +30,8 @@ def import_and_predict(image_data, model):
 
 model = load_model()
 
-st.write("# CIFAR-10 Image Classification")
-file = st.file_uploader("Choose an image file (CIFAR-10 class)", type=["jpg", "png"])
+st.write("# CIFAR-10 Image Classification/Prediction")
+file = st.file_uploader("Select an image", type=["jpg", "png"])
 
 if file is None:
     st.text("Please upload an image file")
